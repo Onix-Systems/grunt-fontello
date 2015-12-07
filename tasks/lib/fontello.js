@@ -131,11 +131,15 @@ var fetchStream = function(options, session, callback){
 
   grunt.log.write('Fetching archive...');
   needle.get(options.host + '/' + session + '/get', function(err, response, body){
+    if(err) {
+      grunt.log.error(err);
+      callback(err);
+    }
 
     if(response.statusCode == 404)
     {
       setSession(options, '');
-	  createSession(options, fetchStream);
+      createSession(options, function(err, options, session) { fetchStream(options, session, callback) });
     }
     else
     {
