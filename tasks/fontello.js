@@ -35,8 +35,10 @@ module.exports = function(grunt) {
     ];
 
     async.waterfall(recipe, function(err, results){
-      if(err) { grunt.log.error(err); }
-      else {
+      if(err) {
+        grunt.log.error(err);
+        done(err);
+      } else {
         grunt.log.ok(results);
         done();
       }
