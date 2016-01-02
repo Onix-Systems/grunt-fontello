@@ -35,13 +35,18 @@
   },
   "peerDependencies": {},
   "keywords": [
-    "gruntplugin", "font-icon", "fontello", "icon", "font"
+    "gruntplugin",
+    "font-icon",
+    "fontello",
+    "icon",
+    "font"
   ],
   "dependencies": {
     "async": "~1.5.0",
     "grunt": "~0.4.1",
     "mkdirp": "~0.5.1",
     "unzip": "~0.1.9",
-    "needle": "~0.11.0"
+    "needle": "~0.11.0",
+    "replacestream": "~2.1.0"
   }
 }
